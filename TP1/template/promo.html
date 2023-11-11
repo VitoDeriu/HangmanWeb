@@ -1,0 +1,24 @@
+{{define "promo"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Information sur la promotion</h1>
+        <p>Nom : {{.Nom}}</p>
+        <p>Filiere : {{.Filiere}}</p>
+        <p>Niveau : {{.Niveau}}</p>
+        <p>Nombre d'étudiant : {{.Nombre}}</p>
+        <h2>Liste des étudiants</h2>
+        {{range .Edu}}
+        <p>Prenom : {{.Prenom}}</p>
+        <p>Nom : {{.Nom}}</p>
+        <p>Age : {{.Age}}</p>
+        <p>Sexe : {{.Sexe}}</p>
+        {{end}}
+</body>
+</html>
+{{end}}
