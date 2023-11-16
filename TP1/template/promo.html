@@ -5,20 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/promotion.css">
 </head>
 <body>
-    <h1>Information sur la promotion</h1>
-        <p>Nom : {{.Nom}}</p>
-        <p>Filiere : {{.Filiere}}</p>
-        <p>Niveau : {{.Niveau}}</p>
-        <p>Nombre d'étudiant : {{.Nombre}}</p>
-        <h2>Liste des étudiants</h2>
+    <div class="Info">
+        <h1>Information sur la promotion</h1>
+            <p>Nom : {{.Nom}}</p>
+            <p>Filiere : {{.Filiere}}</p>
+            <p>Niveau : {{.Niveau}}</p>
+            <p>Nombre d'étudiant : {{.Nombre}}</p>
+            <h2>Liste des étudiants</h2>
+    </div>
+    <div>
         {{range .Edu}}
-        <p>Prenom : {{.Prenom}}</p>
-        <p>Nom : {{.Nom}}</p>
-        <p>Age : {{.Age}}</p>
-        <p>Sexe : {{.Sexe}}</p>
+
+        <div>
+            <p>{{.Prenom}} {{.Nom}} {{.Age}}</p>
+        </div>
+        <div>
+            {{if .Sexe}}
+            <img src="/static/image/male.png" alt="sexe male">
+            {{else}}
+            <img src="/static/image/female.png" alt="sexe female">
+            {{end}}
+        </div>
         {{end}}
+    </div>
 </body>
 </html>
 {{end}}
